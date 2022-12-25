@@ -687,7 +687,7 @@ final class ResultPrinter
 
         $prettifier = new NamePrettifier(false);
 
-        $class = $testSuite->name;
+        $class = strtok($testSuite->name, ':');
         assert(class_exists($class));
 
         $this->output->writeln($prettifier->prettifyTestClass($class));
